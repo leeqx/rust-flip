@@ -1,0 +1,113 @@
+#+SEQ_TODO: TODO(t) NEXT(n) DONING(i@) | DONE(d!) CANCEL(c)
+
+#+TAGS: { 语言(l) 算法(a) }  沟通(e) 
+
+* DONE algorithm code [2/2]
+  CLOSED: [2021-06-10 Thu 22:45]
+  - State "DONE"       from "DONING"     [2021-06-10 Thu 22:45]
+  - State "DONING"     from "DONING"     [2021-06-10 Thu 22:43] \\
+    编写一部分
+  - [X] <2021-06-10 Thu>
+  - [X] org-mode doc
+    - [X] todo list
+    - [X] 代码块
+    - [X] 引用
+    - [X] 表格
+    - [X] 快捷键
+    - [X] 内部跳转
+    - [X] 标签定义
+
+
+* Org-mode
+** todo list
+  使用格式如下：
+ - [ ] 内容
+  可以在当前todo 项上使用快捷键C-c C-c 选中复选框或者取消复选框；可以使用[/] 来统计todo list的进度，更新进度的快捷键是, T T (包含前面的逗号）;
+  给当前org 添加todo的状态可以参考本文档的第一行的格式自行添加，然后在当前行执行C-c C-c 其中括号中的字符是在执行, T T 之后的快捷键 @表示需要输入信息，!表示会插入- State "xxx" from "xxx" 一行信息
+
+** 代码块
+ 格式如下,然后执行C-c C-c 会自动插入代码执行结果在#+RESULTS:
+#+BEGIN_SRC cpp -n :results output
+  #include <stdio.h>
+  #include <time.h>
+    int main()
+    {
+      printf("this is results:%d\n",time(NULL));
+    }
+#+END_SRC
+
+#+RESULTS:
+: this is results:1623335564
+
+** 内嵌代码
+= int ab;=
+
+** 引用
+#+BEGIN_QUOTE
+这是引用的内容
+#+END_QUOTE
+
+** 表格
+格式如下，插入快捷方式为, t n (输入行列数） 
+#+CAPTION: 这是表格的名称
+| a | a |
+|---+---|
+| a | a |
+
+** org-mode 下常用快捷键
+C-c . 来插入时间(Shift + 方向键来移动，回车键选中插入）
+C-c s 插入scheduler
+C-c d 插入dealine
+SPC a o o 打开agenda
+SPC a o c 打开capture,选择需要的模板
+, e e  将当前org文件导出到对应的文件比如pdf，markdown
+, t n  插入表格，需要输入行列
+, T n 给标题打上序号
+
+
+** 内部连接
+文档内部跳转，首先需要在文档中需要跳转过去的地方设置锚点，#<<target>> , 然后在需要的地方 [[]]，在里面添加target即可
+
+** 标签 :
+   格式如下,花括号中为一组只能选一个
+   #+TAGS: { 桌面(d) 服务器(s) }  编辑器(e) 浏览器(f) 多媒体(m) 压缩(z)
+
+   如果手工输入标签，在 *标题* 后设置标签，键入:后，M-Tab自动提供标签的补齐.
+
+-------
+
+* DONING rust 学习[2/4]
+  - State "DONING"     from              [2021-06-10 Thu 22:46]
+  - [X] cargo 使用 [[cargo]]
+  - [X] hello world
+  - [ ] 基础数据类型 [[数据类型]]
+  - [ ] 
+** cargo 使用
+  创建一个新项目时使用cargo new {project name},创建一个库时使用 cargo new --lib test_lib
+  * 编译
+    cargo build
+  * 运行
+    cargo run
+  * 运行测试
+    cargo test
+
+** hello world
+   #+BEGIN_SRC rust -n :RESULTS output
+     fn main() {
+    println!("this is a rust demo");
+     }
+   #+END_SRC
+    
+** 数据类型 #<<数据类型>>
+
+| 类型 |    |   |
+|------+----+---|
+| i8   | u8 |   |
+|      |    |   |
+|      |    |   |
+|      |    |   |
+| f32  |    |   |
+| f64  |    |   |
+|      |    |   |
+   
+** 控制分支
