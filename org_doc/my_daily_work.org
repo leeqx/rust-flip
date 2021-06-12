@@ -74,14 +74,16 @@ SPC a o c 打开capture,选择需要的模板
 
    如果手工输入标签，在 *标题* 后设置标签，键入:后，M-Tab自动提供标签的补齐.
 
+
+   
 -------
 
 * DONING rust 学习[2/4]
   - State "DONING"     from              [2021-06-10 Thu 22:46]
   - [X] cargo 使用 [[cargo]]
   - [X] hello world
-  - [ ] 基础数据类型 [[数据类型]]
-  - [ ] 
+  - [ ]  [[数据类型]]
+  - [ ] 一个例子学习rust [[学习rust]]
 ** cargo 使用
   创建一个新项目时使用cargo new {project name},创建一个库时使用 cargo new --lib test_lib
   * 编译
@@ -110,4 +112,11 @@ SPC a o c 打开capture,选择需要的模板
 | f64  |    |   |
 |      |    |   |
    
-** 控制分支
+** 一个例子学会rust #<<学习rust>>
+   #+BEGIN_SRC rust -n :RESULTS output
+     void all_data_type() {
+      pint
+     }
+   #+END_SRC
+   
+   
